@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BookIt – Study room booking</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>BookIt – Study room booking</h1>
+    <p>Book a study room by selecting a date, time slot and room, then filling in the form.</p>
+  </header>
+
+  <main>
+    <!-- Booking filters -->
+    <section aria-label="Booking filters">
+      <h2>Select date and time</h2>
+
+      <label for="date">Date</label>
+      <input id="date" type="date" />
+
+      <label for="time-slot">Time slot</label>
+      <select id="time-slot">
+        <option value="">-- Select a time slot --</option>
+        <option value="14:00–16:00">14:00–16:00</option>
+        <option value="16:00–18:00">16:00–18:00</option>
+      </select>
+
+      <button id="show-rooms-btn" type="button">
+        Show available rooms
+      </button>
+    </section>
+
+    <!-- Available rooms -->
+    <section aria-label="Available rooms">
+      <h2>Available rooms</h2>
+      <p id="rooms-hint">Select a date and time first.</p>
+
+      <div id="rooms-list">
+        <!-- Room cards will be inserted here via script.js -->
+      </div>
+    </section>
+
+    <!-- Booking form -->
+    <section aria-label="Booking form">
+      <h2>Booking form</h2>
+
+      <form id="booking-form">
+        <p id="selected-room-text">No room selected yet.</p>
+
+        <label for="name">Name (required)</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          aria-describedby="name-error"
+        />
+        <div id="name-error" class="error-text" aria-live="polite"></div>
+
+        <label for="student-id">Student ID (required)</label>
+        <input
+          id="student-id"
+          name="student-id"
+          type="text"
+          aria-describedby="student-id-error"
+        />
+        <div id="student-id-error" class="error-text" aria-live="polite"></div>
+
+        <button id="submit-btn" type="submit">
+          Book room
+        </button>
+      </form>
+
+      <!-- Confirmation message -->
+      <div id="confirmation" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BookIt demo for COMP2850.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
